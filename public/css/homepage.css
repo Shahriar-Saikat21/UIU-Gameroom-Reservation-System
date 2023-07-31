@@ -13,11 +13,12 @@ h3{
     /* border-radius: 5px; */
 }
 body{
-    background: rgb(219, 226, 226);
+    background: #f6f6f6;
 }
 
 .form-bg{
-    background: white;
+    background: #ffffff
+    ;
 
 }
 
