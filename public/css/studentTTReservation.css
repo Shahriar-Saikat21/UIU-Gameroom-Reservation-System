@@ -14,6 +14,10 @@ body{
     color: #fd7e14;
 }
 
+.formTopMargin{
+    margin-top: 500px;
+}
+
 .date{
     background-color: #D9D9D9;
     width: 500px;
