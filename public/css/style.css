@@ -1,0 +1,14 @@
+.nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.container-fluid {
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.col-6{
+    
+}
