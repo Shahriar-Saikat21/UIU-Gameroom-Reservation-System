@@ -9,6 +9,7 @@ const connectDB = require('./config/db');  //database connection
 const {notFoundHandler,errorHandler} = require('./middleware/errorHandle'); //error handle middleware
 const homeRoute = require('./routes/homeRoute');
 const attendanceRoute = require('./routes/attendanceRoute');
+const studentRoute = require('./routes/studentRoute');
 
 
 //initialization
@@ -27,6 +28,7 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 //all routes
 app.use(homeRoute);
 app.use(attendanceRoute);
+app.use(studentRoute);
 
 //Custom error handle
 app.use(notFoundHandler);
