@@ -1,19 +1,39 @@
 //external imports
 const express = require('express');
 const dotenv = require('dotenv').config();
+const cookieParser = require('cookie-parser');
 
+//internal import
+const path = require('path'); //path module
+const connectDB = require('./config/db');  //database connection
+const {notFoundHandler,errorHandler} = require('./middleware/errorHandle'); //error handle middleware
+const homeRoute = require('./routes/homeRoute');
+const attendanceRoute = require('./routes/attendanceRoute');
+
+
+//initialization
 const app = express();
 
 //set view engine
-app.set('view engine', 'ejs');
+app.set('view engine','ejs');
 
-//use static path
-app.use(express.static('public'));
+//set public folder
+app.use(express.static(path.join(__dirname,'public')));
 
-//all paths
+//external middleware
+app.use(express.json());
+app.use(cookieParser(process.env.COOKIE_SECRET));
 
+//all routes
+app.use(homeRoute);
+app.use(attendanceRoute);
+
+//Custom error handle
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 // run server
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT, async() =>{
+    await connectDB();
     console.log(`Server is running on port ${process.env.PORT}`);
 });
