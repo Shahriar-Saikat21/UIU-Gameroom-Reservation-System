@@ -1,5 +1,9 @@
 const studentController = {};
 
+studentController.studentHomePage = (req,res)=>{
+    res.render('studentHomePage');
+};
+
 
 //Student TT Reservation Page
 studentController.TTReservationPage = (req, res) => {
