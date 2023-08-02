@@ -8,40 +8,12 @@
   <link rel="icon" href="/images/uiuLogo.png">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/studentHomePage.css">
-  <script src="/js/bootstrap.min.js" defer></script>
+  <script src="/js/bootstrap.bundle.min.js" defer></script>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navBody fixed-top">
-    <div class="container">
-      <a class="navbar-brand textColor" href="#">UIU Game Room Reservation System</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-          <li class="nav-item">
-            <a class="nav-link textColor" href="#">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Reservation
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Table Tennis</a></li>
-              <li><a class="dropdown-item" href="#">Chess</a></li>
-              <li><a class="dropdown-item" href="#">Carrom</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link textColor" href="#">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <%-include('studentNavbar.ejs')%>
 
   <div class="container formTopMargin">
     <div class="text-left">
@@ -56,7 +28,7 @@
               <h6><b>Board: 02</b></h6>
               <h6><b>Schedule: 12:00 pm - 12:30 pm</b></h6>
             </div>
-            <div class="col-lg-4 col-12 d-flex flex-column">
+            <div class="col-lg-4 col-12 d-flex flex-column align-items-lg-end">
               <h6 class="text-secondary"><b>2 days to go</b></h6>
               <div class="mt-auto">
                 <button type="button" class="btn btn-danger">Cancel Reservation</button>
