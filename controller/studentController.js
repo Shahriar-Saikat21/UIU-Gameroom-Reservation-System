@@ -7,7 +7,17 @@ studentController.studentHomePage = (req,res)=>{
 
 //Student TT Reservation Page
 studentController.TTReservationPage = (req, res) => {
-    res.render('StudentTTReservationPage');
+    res.render('studentTTReservationPage');
+}
+
+//Student Chess Reservation Page
+studentController.ChessReservationPage = (req, res) => {
+    res.render('studentChessReservationPage');
+}
+
+//Student Carrom Reservation Page
+studentController.CarromReservationPage = (req, res) => {
+    res.render('studentCarromReservationPage');
 }
 
 module.exports = studentController;
