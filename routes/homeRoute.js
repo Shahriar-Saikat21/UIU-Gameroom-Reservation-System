@@ -10,6 +10,12 @@ homeRoute.get('/', homeController.homePage);
 //login 
 homeRoute.post('/login', homeController.loginUser);
 
+//signup page
+homeRoute.get('/signup', homeController.signupPage);
+
+//forget password
+homeRoute.get('/forgetPassword', homeController.forgetPassword);
+
 //logout
 homeRoute.get('/logout', homeController.logoutUser);
 

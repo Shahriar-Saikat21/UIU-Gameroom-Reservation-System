@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UIU Game Room Reservation</title>
-    <link rel="icon" href="/images/uiuLogo.png" sizes="16x16">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <script src="/js/bootstrap.bundle.min.js" defer></script>
-    <script src="/js/login.js" defer></script>
-    <link rel="stylesheet" href="/css/homepage.css">
-</head>
+<%-include('homepageHeader.ejs')%>
 
 <body>
     <div class="container">
@@ -42,8 +30,8 @@
                         </div>
                     </div>
                        
-                       <p class="mt-3">Not signup yet? <a href="#">Sign Up </a></p>
-                       <p>Forget password?<a href="#">Reset</a></p>
+                       <p class="mt-3">Not signup yet? <a href="/signup">Sign Up </a></p>
+                       <p>Forget password?<a href="/forgetPassword">Reset</a></p>
                        </div>
                     
                 </form>

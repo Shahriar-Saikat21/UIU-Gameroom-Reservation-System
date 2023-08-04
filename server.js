@@ -10,6 +10,7 @@ const {notFoundHandler,errorHandler} = require('./middleware/errorHandle'); //er
 const homeRoute = require('./routes/homeRoute');
 const attendanceRoute = require('./routes/attendanceRoute');
 const studentRoute = require('./routes/studentRoute');
+const adminRoute = require('./routes/adminRoute');
 
 
 //initialization
@@ -29,6 +30,7 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(homeRoute);
 app.use(attendanceRoute);
 app.use(studentRoute);
+app.use(adminRoute);
 
 //Custom error handle
 app.use(notFoundHandler);

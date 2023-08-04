@@ -19,6 +19,16 @@ homeController.loginUser = async (req, res) => {
     
 };
 
+//signup page
+homeController.signupPage = (req, res) => {
+    res.render('signUPpage');
+};
+
+//forget password page
+homeController.forgetPassword = (req, res) => {
+    res.render('forgetPasswordpage');
+};
+
 //logout user
 homeController.logoutUser = (req, res) => {
     res.clearCookie(process.env.COOKIE_NAME);

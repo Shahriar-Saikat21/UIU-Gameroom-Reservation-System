@@ -17,16 +17,14 @@ body{
 }
 
 .form-bg{
-    background: #ffffff
-    ;
-
+    background: #ffffff;
 }
 
 img{
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-
 }
+
 .btn1{
     border: none;
     outline: none;
@@ -36,4 +34,19 @@ img{
     color: white;
     border-radius: 3px;
     font-weight: bold;
+}
+
+.btn2{
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 100%;
+    background-color: #8B8FF2;
+    color: white;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.form-button{
+    display: inline;
 }
