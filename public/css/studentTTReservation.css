@@ -10,12 +10,21 @@ body{
     color: #FFFFFF !important;
 }
 
-.formTopMargin{
-    margin-top: 90px !important;
+.h1-cl{
+    color: #fd7e14;
 }
 
-input{
-    background-color: #D9D9D9 !important;
+.formTopMargin{
+    margin-top: 80px !important;
+}
+
+.date{
+    background-color: #D9D9D9;
+    width: 500px;
+}
+.board{
+    background-color: #D9D9D9;
+    width: 500px;
 }
 
 .btn-color{
