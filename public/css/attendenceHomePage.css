@@ -14,8 +14,14 @@ body{
     margin-top: 90px !important;
 }
 
-input{
-    background-color: #D9D9D9 !important;
+.date{
+    background-color: #D9D9D9;
+    width: 500px;
+}
+
+.board{
+    background-color: #FFFFFF;
+    width: 500px;
 }
 
 .btn-color{
@@ -30,4 +36,14 @@ input{
     background-color: #D9D9D9;
     color: #FD7E14;
     width: 200px;
+}
+
+.text1{
+    background-color: #D9D9D9;
+    width :650px;
+}
+
+.Instrument{
+    background-color: #FFFFFF;
+
 }

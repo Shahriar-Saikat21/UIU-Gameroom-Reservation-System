@@ -6,6 +6,11 @@ body{
     background-color: #FD7E14 !important;
 }
 
+.headText{
+    color: #FD7E14 !important;
+    font-size: 40px;
+}
+
 .textColor{
     color: #FFFFFF !important;
 }
