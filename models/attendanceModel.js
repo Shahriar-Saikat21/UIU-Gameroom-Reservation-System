@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 
-const studentSchema = mongoose.Schema({
+const attendanceSchema = mongoose.Schema({
     name : {
         type : String,
         required : true,
@@ -12,29 +12,21 @@ const studentSchema = mongoose.Schema({
         required : true,
         unique : true
     },
-    studentID:{
+    employeeID:{
         type : String,
         required : true,
         unique : true
-    },
-    image : {
-        data: Buffer,
-        contentType : String
     },
     password : {
         type : String,
         required : true,
     },
-    uiuInfo : {
-        type : mongoose.Types.ObjectId,
-        ref : 'studnetInfo',
-    },
-    status : {
+    mobile : {
         type : String,
         required : true,
     }
 });
 
-const studentModel = mongoose.model('gameRoomMember',studentSchema);
+const attendanceModel = mongoose.model('attendance',attendanceSchema);
 
-module.exports = studentModel;
+module.exports = attendanceModel;
