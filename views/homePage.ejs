@@ -8,6 +8,7 @@
     <link rel="icon" href="/images/uiuLogo.png" sizes="16x16">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <script src="/js/bootstrap.bundle.min.js" defer></script>
+    <script src="/js/login.js" defer></script>
     <link rel="stylesheet" href="/css/homepage.css">
 </head>
 
@@ -23,20 +24,21 @@
             </div>
             <div class="col-lg-6 form-bg p-5 rounded shadow py-3">
                 <h3 class="font-weight-bold py-3">Login</h3>
-                <form>
+                <div class="form-text text-danger message"></div>
+                <form class="form">
                     <div class="form-row">
                         <div class="">
-                            <input type="ID" placeholder="Enter Your Login ID" class="form-control  my-4 ">
+                            <input type="text" placeholder="Enter Your Login ID" class="form-control  my-4 " name="id">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="">
-                            <input type="password" placeholder="Enter password" class="form-control my-4">
+                            <input type="password" placeholder="Enter password" class="form-control my-4" name="password">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="">
-                            <button type="button" class="btn1">Login</button>
+                            <button type="submit" class="btn1">Login</button>
                         </div>
                     </div>
                        
