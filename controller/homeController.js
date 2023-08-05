@@ -29,6 +29,11 @@ homeController.forgetPassword = (req, res) => {
     res.render('forgetPasswordpage');
 };
 
+//Reset Password Page
+homeController.resetPasswordPage = (req, res) => {
+    res.render('resetPassword');
+};
+
 //logout user
 homeController.logoutUser = (req, res) => {
     res.clearCookie(process.env.COOKIE_NAME);

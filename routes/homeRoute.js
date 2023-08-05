@@ -13,8 +13,11 @@ homeRoute.post('/login', homeController.loginUser);
 //signup page
 homeRoute.get('/signup', homeController.signupPage);
 
-//forget password
+//forget password page
 homeRoute.get('/forgetPassword', homeController.forgetPassword);
+
+//reset password page
+homeRoute.get('/resetPassword', homeController.resetPasswordPage);
 
 //logout
 homeRoute.get('/logout', homeController.logoutUser);
