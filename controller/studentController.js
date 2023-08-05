@@ -4,6 +4,10 @@ studentController.studentHomePage = (req,res)=>{
     res.render('studentHomePage');
 };
 
+studentController.studentHistoryPage = (req,res)=>{
+    res.render('studentHistoryPage');
+};
+
 
 //Student TT Reservation Page
 studentController.TTReservationPage = (req, res) => {

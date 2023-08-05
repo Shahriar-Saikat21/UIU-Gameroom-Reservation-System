@@ -6,6 +6,9 @@ const studentRoute = express.Router();
 //Student Home Page
 studentRoute.get('/studentHome',studentController.studentHomePage);
 
+//Student History Page
+studentRoute.get('/studentHistoryPage',studentController.studentHistoryPage);
+
 //Student TT Reservation Page
 studentRoute.get('/studentTableTennis', studentController.TTReservationPage);
 
