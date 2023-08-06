@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UIU Game Room Reservation || Student</title>
+  <link rel="icon" href="/images/uiuLogo.png">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/studentTTReservation.css">
+  <script src="/js/bootstrap.bundle.min.js" defer></script>
+  <script src="/js/logOutBtn.js" defer></script>
+</head>
+
+<body>
+
+  <%-include('studentNavbar.ejs')%>
+
+  <div class=container>
+    <div>
+      <h1 class="h1-cl d-flex mt-5 formTopMargin mb-3">Carrom</h1>
+    </div>
+    <div class="mb-5">
+      <form class="d-flex">
+        <input type="date" class="form-control me-4 date " type="search" placeholder="select date" aria-label="Search">
+        <select class="form-select board form-control me-4" aria-label="Default select example">
+          <option value="" disabled selected hidden>Select Board</option>
+          <option value="1">Board 01</option>
+          <option value="2">Board 02</option>
+          <option value="3">Board 03</option>
+          <option value="4">Board 04</option>
+        </select>
+        <button class="btn btn-color" type="submit">Search</button>
+    </div>
+    <div class="row mt-4">
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100  btn-op ">09:00 AM - 09:30 AM</div>
+      </div>
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100 btn-op ">09:30 AM - 10:00 AM</div>
+      </div>
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100 btn-op ">10:00 AM - 10:30 AM</div>
+      </div>
+        <div class="col-lg-3 col-12 ">
+        <div class="btn w-100  btn-op">10:30 AM - 11:00 AM</div>
+      </div>
+    </div>
+    <div class="row mt-4">    
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100 btn-op ">11:00 AM - 11:30 AM</div>
+      </div>
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100 btn-op ">11:30 AM - 12:00 PM</div>
+      </div>
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100 btn-op ">12:00 PM - 12:30 PM</div>
+      </div>
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100 btn-op ">12:30 PM - 01:00 PM</div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100  btn-op ">01:00 PM - 01:30 PM</div>
+      </div>
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100 btn-op ">01:30 PM - 02:00 PM</div>
+      </div>
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100 btn-op ">02:00 PM - 02:30 PM</div>
+      </div>
+        <div class="col-lg-3 col-12 ">
+        <div class="btn w-100  btn-op">02:30 PM - 03:00 PM</div>
+      </div>
+    </div>
+    <div class="row mt-4 mb-5">    
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100 btn-op ">03:00 PM - 03:30 PM</div>
+      </div>
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100 btn-op ">03:30 PM - 04:00 PM</div>
+      </div>
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100 btn-op ">04:00 PM - 04:30 PM</div>
+      </div>
+      <div class="col-lg-3 col-12 ">
+        <div class="btn w-100 btn-op ">04:30 PM - 05:00 PM</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<%-include('attendanceNavbar.ejs')%>
+
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <form class="d-flex mt-5 formTopMargin w-50" role="search">
+        <input class="form-control me-2 " type="search" placeholder="Enter Token Number or Student ID"
+          aria-label="Search">
+        <button class="btn btn-color" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <div class="mt-5 text1 p-4 rounded">
+        <h3 class="text-center mb-2"><b>Reservation Details</b></h3>
+        <h6><b>Schedule Token: T100023A</b></h6>
+        <h6><b>Student ID:011211000</b></h6>
+        <h6><b>Date: 25-08-2023</b></h6>
+        <h6><b>Game: Table Tennis</b></h6>
+        <h6><b>Board: 02</b></h6>
+        <h6><b>Schedule: 12:00 pm - 12:30 pm</b></h6>
+        <h6><b>Status : </b></h6>
+        <div class="d-flex flex-column align-items-center ">
+          <select class="board form-control me-4 w-50 mb-3" aria-label="Default select example">
+            <option value="Not Attened" >Not Attened</option>
+            <option value="Instrument Given">Instrument Given</option>
+            <option value="Instrument Returned">Instrument Returned</option>
+          </select>   
+          <button class="btn btn-color" type="submit">Update</button> 
+        </div>
+      </div> 
+    </div>
+     
+  </div>
+
+
+</body>
+
+</html>
