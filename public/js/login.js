@@ -11,7 +11,7 @@ form.addEventListener('submit',(e)=>{
 
 
     fetch('/login',{
-        method: 'POST',
+        method: 'GET',
         headers : {
             'content-type': 'application/json' 
         },
