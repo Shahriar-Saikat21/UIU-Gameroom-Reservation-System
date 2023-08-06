@@ -2,9 +2,11 @@
 const path = require('path');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
 
 //model imports
-const Student = require('../models/studentModel'); //student model
+const student = require('../models/studentModel'); //student model
+const uiuInfo = require('../models/uiuInfoModel'); //uiu info model
 
 
 const homeController = {}
@@ -12,11 +14,6 @@ const homeController = {}
 //Home Page & Login Page
 homeController.homePage = (req, res) => {
     res.render('homePage');  
-};
-
-//login user
-homeController.loginUser = async (req, res) => {
-    
 };
 
 //signup page
@@ -32,6 +29,62 @@ homeController.forgetPassword = (req, res) => {
 //Reset Password Page
 homeController.resetPasswordPage = (req, res) => {
     res.render('resetPassword');
+};
+
+//signin request
+homeController.signinRequest = async (req, res) => {
+    const user = await uiuInfo.findOne({ id: req.body.id });
+    if(user){
+        const otpSent = Math.floor(100000 + Math.random() * 900000);
+
+        const transporter = nodemailer.createTransport({
+            host: 'smtp.ethereal.email',
+            port: 587,
+            auth: {
+                user: 'ephraim.west26@ethereal.email',
+                pass: 'hcFA7ZP9t9dzZZjqxH'
+            }
+        });
+
+        const mailData = {
+            from: 'ephraim.west26@ethereal.email',
+            to: `${user.email}`,         
+            subject: 'UIU Reservation System - OTP Verification',
+            text: `${otpSent}`
+        };
+    
+        transporter.sendMail(mailData, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            res.status(200).send({ message:"OTP has been sent to your UIU mail",success:true,otp:otpSent,user:user });
+        });
+    }
+};
+
+//signin validation with otp and signin
+homeController.signinValidation = async (req, res) => {
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const newUser = new student({
+        studentID: req.body.id,
+        password: hashedPassword,
+        status : "active",
+        name:req.body.name,
+        email:req.body.email,
+        uiuInfo : req.body.uid
+    });
+
+    try {
+        await newUser.save();
+        res.status(500).json({message: "Signup Successfully", success:true});
+    } catch (err) {
+        res.status(200).json({message: err.message,success:false});
+    }
+};
+
+//login user
+homeController.loginUser = async (req, res) => {
+    
 };
 
 //logout user
