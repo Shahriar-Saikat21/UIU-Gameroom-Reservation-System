@@ -33,8 +33,8 @@ otpBtn.addEventListener('click', (e) => {
         }else{
             sessionStorage.setItem('otp', data.otp);
             sessionStorage.setItem('uid', data.user._id);
-            sessionStorage.setItem('email', data.user.name);
-            sessionStorage.setItem('name', data.user.email);
+            sessionStorage.setItem('email', data.user.email);
+            sessionStorage.setItem('name', data.user.name);
             alert(data.message);
         }
     }).catch(err=>{

@@ -7,7 +7,8 @@ const nodemailer = require('nodemailer');
 //model imports
 const student = require('../models/studentModel'); //student model
 const uiuInfo = require('../models/uiuInfoModel'); //uiu info model
-
+const admin = require('../models/adminModel'); //admin model
+const attendance = require('../models/attendanceModel'); //attendance model
 
 const homeController = {}
 
@@ -84,7 +85,54 @@ homeController.signinValidation = async (req, res) => {
 
 //login user
 homeController.loginUser = async (req, res) => {
-    
+    try {
+        const id = req.body.id;
+        let userID = '';
+        let user = "";
+        let role = '';
+        if(id[0]=='0'){
+            user = await student.findOne({ studentID: id });
+            userID = user.studentID;
+            role = 'student';
+        }else if(id[0]=='A'){
+            user = await admin.findOne({ id: id });
+            userID = user.id;
+            role = 'admin';
+        }else if(id[0]=='E'){
+            user = await attendance.findOne({ id: id });
+            userID = user.id;
+            role = 'attendance';
+        }
+        if (user && user._id) {
+            const isValidPass = await bcrypt.compare(req.body.password, user.password);
+
+            if (isValidPass) {
+                const userObject = {
+                    id: userID,
+                }
+
+                //token generate
+                const token = jwt.sign(userObject, process.env.JWT_SECRET, {
+                    expiresIn: process.env.JWT_EXPIRES_IN
+                });
+
+                //cookie set
+                res.cookie(process.env.COOKIE_NAME, token, {
+                    maxAge: process.env.JWT_EXPIRES_IN,
+                    httpOnly: true,
+                    signed: true,
+                });
+
+                res.status(500).json({message: "User Logged In Successfully",success:true,role:role});
+            }else{
+                res.status(200).json({message: "Invalid email or password",success:false});
+            }
+        }else{
+            res.status(200).json({message: "Invalid email or password",success:false});
+        }
+    } catch (err) {
+        res.status(200).json({message: err.message,success:false});
+    }
 };
 
 //logout user

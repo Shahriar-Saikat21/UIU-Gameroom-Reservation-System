@@ -11,7 +11,7 @@ form.addEventListener('submit',(e)=>{
 
 
     fetch('/login',{
-        method: 'GET',
+        method: 'POST',
         headers : {
             'content-type': 'application/json' 
         },
@@ -21,7 +21,7 @@ form.addEventListener('submit',(e)=>{
         if(data.success){
             if(data.role == "student"){
                 window.location.href = "/studentHome";
-            }else if(data.role == "teacher"){
+            }else if(data.role == "attendance"){
                 window.location.href = "/attendance";
             }else{
                 window.location.href = "/adminHome";

@@ -1,6 +1,7 @@
 const express = require('express');
 const homeController = require('../controller/homeController');
 
+
 const homeRoute = express.Router();
 
 
@@ -18,7 +19,6 @@ homeRoute.get('/resetPassword', homeController.resetPasswordPage);
 
 //signin request
 homeRoute.post('/signinRequest', homeController.signinRequest);
-
 
 //signin validation with otp and signin
 homeRoute.post('/signinValidation', homeController.signinValidation);
