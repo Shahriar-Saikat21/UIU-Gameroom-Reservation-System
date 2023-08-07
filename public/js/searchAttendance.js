@@ -29,8 +29,7 @@ searchBtn.addEventListener('click',(e)=>{
               <h6><b>Mobile: ${data.info.mobile}</b></h6>
             </div>
             <div class="d-flex justify-content-end">
-              <a href="/adminAttendantUpdate" class="btn btn-color-up mb-3 me-3">Update</a>
-              <button class="btn btn-color-del mb-3" type="submit">Delete</button>
+              <a href="/adminAttendantUpdate?id=${data.info.employeeID}" class="btn btn-color-up mb-3 me-3">Update</a>
             </div>
           </div>`;
             section.insertAdjacentHTML('beforeend',markup);

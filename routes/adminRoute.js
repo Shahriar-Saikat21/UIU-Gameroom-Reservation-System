@@ -22,6 +22,9 @@ adminRoute.post('/adminAttendantSearchFunc',authentication,adminController.admin
 //Admin Attendance Update page
 adminRoute.get('/adminAttendantUpdate',authentication,adminController.adminUpdateAttendancePage);
 
+//Admin Attendance Update Func
+adminRoute.put('/adminAttendantUpdateFunc',authentication,adminController.adminAttendanceUpdateFunc);
+
 //Admin Attendance Create Func
 adminRoute.post('/adminAttendantCreateFunc',authentication,adminController.adminCreateAttendance);
 

@@ -35,8 +35,25 @@ adminController.adminSearchAttendance = async (req, res) => {
 
 
 //Admin Update Attendance page
-adminController.adminUpdateAttendancePage = (req, res) => {
-    res.render('adminAttendenceAccountUpdate');
+adminController.adminUpdateAttendancePage = async (req, res) => {
+    const user = await employee.findOne({ employeeID: req.query.id });
+    if(user){
+        res.render('adminAttendenceAccountUpdate',{user});
+    }else{
+        res.render('adminAttendenceAccountSearch');
+    }
+    
+};
+
+//Admin Update Attendance func
+adminController.adminAttendanceUpdateFunc = async (req, res) => {
+    const memID = req.query.id;
+    try {
+        await employee.updateOne({employeeID:memID},{$set:{name:req.body.name,email:req.body.email,mobile:req.body.mobile}});
+        res.status(500).json({message: "Employee Info Updated Successfully",success:true});
+    } catch (err) {
+        res.status(200).json({message: err.message,success:false});
+    }
 };
 
 //Admin Create Attendance func
