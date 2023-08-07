@@ -7,8 +7,17 @@ const adminRoute = express.Router();
 //admin Home Page
 adminRoute.get('/adminHome',authentication,adminController.adminHomePage);
 
-//admin see all page
-adminRoute.get('/adminSeeAllHistory',authentication,adminController.adminSeeAllPage);
+//Admin Student search
+adminRoute.post('/adminStudentSearch',authentication,adminController.adminStudentSearch);
+
+//admin student schedule see
+adminRoute.get('/adminSeeAllHistory',authentication,adminController.adminStudentSchedule);
+
+//admin student ban
+adminRoute.put('/adminStudentBan',authentication,adminController.adminStudentBan);
+
+//admin student unban
+adminRoute.put('/adminStudentUnban',authentication,adminController.adminStudentUnban);
 
 //Admin Attendance create page
 adminRoute.get('/adminAttendantCreate',authentication,adminController.adminCreateAttendancePage);

@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 
 const scheduleSchema = mongoose.Schema({
     studentID:{
+        type : String,
+        required : true,
+    },
+    info:{
         type : mongoose.Types.ObjectId,
         ref : 'gameroommembers',
     },
