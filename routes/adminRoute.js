@@ -16,7 +16,13 @@ adminRoute.get('/adminAttendantCreate',authentication,adminController.adminCreat
 //Admin search Attendance page
 adminRoute.get('/adminAttendantSearch',authentication,adminController.adminSearchAttendancePage);
 
+//Admin Search Attendance func
+adminRoute.post('/adminAttendantSearchFunc',authentication,adminController.adminSearchAttendance);
+
 //Admin Attendance Update page
 adminRoute.get('/adminAttendantUpdate',authentication,adminController.adminUpdateAttendancePage);
+
+//Admin Attendance Create Func
+adminRoute.post('/adminAttendantCreateFunc',authentication,adminController.adminCreateAttendance);
 
 module.exports = adminRoute;

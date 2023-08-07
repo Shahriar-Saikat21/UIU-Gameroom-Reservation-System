@@ -99,7 +99,7 @@ homeController.loginUser = async (req, res) => {
             userID = user.id;
             role = 'admin';
         }else if(id[0]=='E'){
-            user = await attendance.findOne({ id: id });
+            user = await attendance.findOne({ employeeID: id });
             userID = user.id;
             role = 'attendance';
         }
