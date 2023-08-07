@@ -1,0 +1,25 @@
+<%-include('adminNavbar.ejs')%>
+
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center align-items-center" style="margin-top:50px;">
+            <h2 class="mt-5" style="color:#FD7E14;"><b>Reservation Timeline</b></h2>
+            <div class="d-flex">
+                <button type="button" class="btn btn-danger m-3 ban">Ban Profile</button>
+                <button type="button" class="btn btn-success m-3 unBan">Unban Profile</button>
+            </div>
+            <% time.forEach((i) =>{%>
+                <div class="schedule w-50 bg-body-tertiary p-3 rounded-2 m-3">
+                    <h6><b>Schedule Token: <%= i._id %></b></h6>
+                    <h6><b>Date: <%= i.reservationDate %></b></h6>
+                    <h6><b>Game: <%= i.game %></b></h6>
+                    <h6><b>Board: <%= i.board %></b></h6>
+                    <h6><b>Schedule: <%= i.reservationTime %></b></h6>
+                    <h6><b>Schedule: <%= i.reservationStatus %></b></h6>
+                </div>
+            <% })%>
+        </div>
+    </div>
+
+</body>
+
+</html>
