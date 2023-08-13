@@ -43,15 +43,8 @@ body{
 
 .btn-op{
     height: 70px;
-    border-color: #000000;
     border-width: 3px;
     font-weight: bold;
     font-size: 25px;
     margin-bottom: 5px;
-}
-
-.btn-op:hover{
-    background-color: #FFFFFF;
-    border-color: #FD7E14;
-    color:#FD7E14
 }
