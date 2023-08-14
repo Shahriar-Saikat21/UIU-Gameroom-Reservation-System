@@ -7,10 +7,6 @@ const scheduleSchema = mongoose.Schema({
         type : String,
         required : true,
     },
-    info:{
-        type : mongoose.Types.ObjectId,
-        ref : 'gameroommembers',
-    },
     game : {
         type : String,
         required : true,
