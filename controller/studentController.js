@@ -12,8 +12,27 @@ studentController.studentHomePage = async(req,res)=>{
     
 };
 
-studentController.studentHistoryPage = (req,res)=>{
-    res.render('studentHistoryPage');
+studentController.studentHistoryPage = async (req,res)=>{
+    const time = await Schedule.find({$and:[{studentID : req.id}]}).sort({reservationDate:1});
+    const d = new Date();
+    let month = d.getMonth()+1;
+
+    let thisMonth = 0;
+    let total = time.length;
+
+    for(i = 0; i<total; i++){
+        let f = new Date(time[i].reservationDate);
+        if(f.getMonth()+1 == month){
+            thisMonth++;
+        }
+    }
+
+    const count = {
+        "thisMonth" : thisMonth,
+        "total" : total
+    }
+    console.log(time,count)
+    res.render('studentHistoryPage',{time,count});
 };
 
 
