@@ -10,4 +10,7 @@ attendanceRoute.get('/attendance', authentication,attendance.homePage);
 //Attendance Distribution Page
 attendanceRoute.get('/attendanceDistribution', authentication,attendance.distributionPage);
 
+//Attendance distribution history
+attendanceRoute.post('/attendanceDistributionHistory', authentication,attendance.distributionHistoryPage);
+
 module.exports = attendanceRoute;
