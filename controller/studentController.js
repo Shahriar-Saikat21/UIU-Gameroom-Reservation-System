@@ -306,4 +306,14 @@ studentController.carromBook = async (req, res) => {
 
 }
 
+//Student cancel reservation
+studentController.cancelReservation = async (req, res) => {
+    try {
+        await Schedule.deleteOne({_id:req.query.id});
+        res.status(500).json({message: "Reservation has been cancelled Successfully",success:true});
+    } catch (err) {
+        res.status(200).json({message: err.message,success:false});
+    }
+}
+
 module.exports = studentController;
