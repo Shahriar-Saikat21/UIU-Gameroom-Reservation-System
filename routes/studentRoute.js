@@ -38,5 +38,8 @@ studentRoute.post('/carromSearch', authentication,studentController.carromSearch
 //Student carrom Book
 studentRoute.post('/carromBook', authentication,studentController.carromBook);
 
+//student cancel reservation
+studentRoute.get('/cancelReservation', authentication,studentController.cancelReservation);
+
 
 module.exports = studentRoute;
