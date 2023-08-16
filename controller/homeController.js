@@ -42,8 +42,8 @@ homeController.signinRequest = async (req, res) => {
             host: 'smtp.ethereal.email',
             port: 587,
             auth: {
-                user: 'isabella.keebler@ethereal.email',
-                pass: 'uvfbtDNJXpTEv9NKz3'
+                user: 'isom.cole@ethereal.email',
+                pass: 'AD3HSeT3M934JbkJty'
             }
         });
 

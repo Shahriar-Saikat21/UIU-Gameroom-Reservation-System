@@ -6,7 +6,19 @@ for(let i of canecelBtns){
     
         const cancelId = i.id;
     
-        console.log(cancelId);
-        //Here u have to write the fetch api func to delete the reservation (GET method)
+        fetch(`/cancelReservation?id=${cancelId}`)
+        .then(res=>res.json())
+        .then(data=>{
+            if(data.success){
+                alert(data.message);
+                window.location.href='/studentHome';
+            }else{
+                alert(data.message);
+                window.location.href='/studentHome';
+            }
+        })
+        .catch(err=>{
+            console.log(err.message);
+        })
     });
 }
