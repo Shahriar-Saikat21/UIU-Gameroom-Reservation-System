@@ -68,37 +68,37 @@ studentController.TTSearchPage = async (req, res) => {
     };
 
     for (let i of schedule){
-        if(i.reservationTime=='09:00AM - 09:30AM'){
+        if(i.reservationTime=='09:00 AM - 09:30 AM'){
             scheduleStatus[1] = 'disabled'
-        }else if(i.reservationTime=='09:30AM - 10:00AM'){
+        }else if(i.reservationTime=='09:30 AM - 10:00 AM'){
             scheduleStatus[2] = 'disabled'
-        }else if(i.reservationTime=='10:00AM - 10:30AM'){
+        }else if(i.reservationTime=='10:00 AM - 10:30 AM'){
             scheduleStatus[3] = 'disabled'
-        }else if(i.reservationTime=='10:30AM - 11:00AM'){
+        }else if(i.reservationTime=='10:30 AM - 11:00 AM'){
             scheduleStatus[4] = 'disabled'
-        }else if(i.reservationTime=='11:00AM - 11:30AM'){
+        }else if(i.reservationTime=='11:00 AM - 11:30 AM'){
             scheduleStatus[5] = 'disabled'
-        }else if(i.reservationTime=='11:30AM - 12:00PM'){
+        }else if(i.reservationTime=='11:30 AM - 12:00 PM'){
             scheduleStatus[6] = 'disabled'
-        }else if(i.reservationTime=='12:00PM - 12:30PM'){
+        }else if(i.reservationTime=='12:00 PM - 12:30 PM'){
             scheduleStatus[7] = 'disabled'
-        }else if(i.reservationTime=='12:30PM - 01:00PM'){
+        }else if(i.reservationTime=='12:30 PM - 01:00 PM'){
             scheduleStatus[8] = 'disabled'
-        }else if(i.reservationTime=='01:00PM - 01:30PM'){
+        }else if(i.reservationTime=='01:00 PM - 01:30 PM'){
             scheduleStatus[9] = 'disabled'
-        }else if(i.reservationTime=='01:30PM - 02:00PM'){
+        }else if(i.reservationTime=='01:30 PM - 02:00 PM'){
             scheduleStatus[10] = 'disabled'
-        }else if(i.reservationTime=='02:00PM - 02:30PM'){
+        }else if(i.reservationTime=='02:00 PM - 02:30 PM'){
             scheduleStatus[11] = 'disabled'
-        }else if(i.reservationTime=='02:30PM - 03:00PM'){
+        }else if(i.reservationTime=='02:30 PM - 03:00 PM'){
             scheduleStatus[12] = 'disabled'
-        }else if(i.reservationTime=='03:00PM - 03:30PM'){
+        }else if(i.reservationTime=='03:00 PM - 03:30 PM'){
             scheduleStatus[13] = 'disabled'
-        }else if(i.reservationTime=='03:30PM - 04:00PM'){
+        }else if(i.reservationTime=='03:30 PM - 04:00 PM'){
             scheduleStatus[14] = 'disabled'
-        }else if(i.reservationTime=='04:00PM - 04:30PM'){
+        }else if(i.reservationTime=='04:00 PM - 04:30 PM'){
             scheduleStatus[15] = 'disabled'
-        }else if(i.reservationTime=='04:30PM - 05:00PM'){
+        }else if(i.reservationTime=='04:30 PM - 05:00 PM'){
             scheduleStatus[16] = 'disabled'
         }
     }
@@ -107,8 +107,6 @@ studentController.TTSearchPage = async (req, res) => {
 
 //Student TT book
 studentController.TTBook = async (req, res) => {
-    //const reservationStatus = "Not Attended";
-
     const newSchedule = new Schedule({
         studentID: req.id,
         game : "Table Tennis",
@@ -158,37 +156,37 @@ studentController.chessSearchPage = async (req, res) => {
     };
 
     for (let i of schedule){
-        if(i.reservationTime=='09:00AM - 09:30AM'){
+        if(i.reservationTime=='09:00 AM - 09:30 AM'){
             scheduleStatus[1] = 'disabled'
-        }else if(i.reservationTime=='09:30AM - 10:00AM'){
+        }else if(i.reservationTime=='09:30 AM - 10:00 AM'){
             scheduleStatus[2] = 'disabled'
-        }else if(i.reservationTime=='10:00AM - 10:30AM'){
+        }else if(i.reservationTime=='10:00 AM - 10:30 AM'){
             scheduleStatus[3] = 'disabled'
-        }else if(i.reservationTime=='10:30AM - 11:00AM'){
+        }else if(i.reservationTime=='10:30 AM - 11:00 AM'){
             scheduleStatus[4] = 'disabled'
-        }else if(i.reservationTime=='11:00AM - 11:30AM'){
+        }else if(i.reservationTime=='11:00 AM - 11:30 AM'){
             scheduleStatus[5] = 'disabled'
-        }else if(i.reservationTime=='11:30AM - 12:00PM'){
+        }else if(i.reservationTime=='11:30 AM - 12:00 PM'){
             scheduleStatus[6] = 'disabled'
-        }else if(i.reservationTime=='12:00PM - 12:30PM'){
+        }else if(i.reservationTime=='12:00 PM - 12:30 PM'){
             scheduleStatus[7] = 'disabled'
-        }else if(i.reservationTime=='12:30PM - 01:00PM'){
+        }else if(i.reservationTime=='12:30 PM - 01:00 PM'){
             scheduleStatus[8] = 'disabled'
-        }else if(i.reservationTime=='01:00PM - 01:30PM'){
+        }else if(i.reservationTime=='01:00 PM - 01:30 PM'){
             scheduleStatus[9] = 'disabled'
-        }else if(i.reservationTime=='01:30PM - 02:00PM'){
+        }else if(i.reservationTime=='01:30 PM - 02:00 PM'){
             scheduleStatus[10] = 'disabled'
-        }else if(i.reservationTime=='02:00PM - 02:30PM'){
+        }else if(i.reservationTime=='02:00 PM - 02:30 PM'){
             scheduleStatus[11] = 'disabled'
-        }else if(i.reservationTime=='02:30PM - 03:00PM'){
+        }else if(i.reservationTime=='02:30 PM - 03:00 PM'){
             scheduleStatus[12] = 'disabled'
-        }else if(i.reservationTime=='03:00PM - 03:30PM'){
+        }else if(i.reservationTime=='03:00 PM - 03:30 PM'){
             scheduleStatus[13] = 'disabled'
-        }else if(i.reservationTime=='03:30PM - 04:00PM'){
+        }else if(i.reservationTime=='03:30 PM - 04:00 PM'){
             scheduleStatus[14] = 'disabled'
-        }else if(i.reservationTime=='04:00PM - 04:30PM'){
+        }else if(i.reservationTime=='04:00 PM - 04:30 PM'){
             scheduleStatus[15] = 'disabled'
-        }else if(i.reservationTime=='04:30PM - 05:00PM'){
+        }else if(i.reservationTime=='04:30 PM - 05:00 PM'){
             scheduleStatus[16] = 'disabled'
         }
     }
@@ -248,37 +246,37 @@ studentController.carromSearchPage = async (req, res) => {
     };
 
     for (let i of schedule){
-        if(i.reservationTime=='09:00AM - 09:30AM'){
+        if(i.reservationTime=='09:00 AM - 09:30 AM'){
             scheduleStatus[1] = 'disabled'
-        }else if(i.reservationTime=='09:30AM - 10:00AM'){
+        }else if(i.reservationTime=='09:30 AM - 10:00 AM'){
             scheduleStatus[2] = 'disabled'
-        }else if(i.reservationTime=='10:00AM - 10:30AM'){
+        }else if(i.reservationTime=='10:00 AM - 10:30 AM'){
             scheduleStatus[3] = 'disabled'
-        }else if(i.reservationTime=='10:30AM - 11:00AM'){
+        }else if(i.reservationTime=='10:30 AM - 11:00 AM'){
             scheduleStatus[4] = 'disabled'
-        }else if(i.reservationTime=='11:00AM - 11:30AM'){
+        }else if(i.reservationTime=='11:00 AM - 11:30 AM'){
             scheduleStatus[5] = 'disabled'
-        }else if(i.reservationTime=='11:30AM - 12:00PM'){
+        }else if(i.reservationTime=='11:30 AM - 12:00 PM'){
             scheduleStatus[6] = 'disabled'
-        }else if(i.reservationTime=='12:00PM - 12:30PM'){
+        }else if(i.reservationTime=='12:00 PM - 12:30 PM'){
             scheduleStatus[7] = 'disabled'
-        }else if(i.reservationTime=='12:30PM - 01:00PM'){
+        }else if(i.reservationTime=='12:30 PM - 01:00 PM'){
             scheduleStatus[8] = 'disabled'
-        }else if(i.reservationTime=='01:00PM - 01:30PM'){
+        }else if(i.reservationTime=='01:00 PM - 01:30 PM'){
             scheduleStatus[9] = 'disabled'
-        }else if(i.reservationTime=='01:30PM - 02:00PM'){
+        }else if(i.reservationTime=='01:30 PM - 02:00 PM'){
             scheduleStatus[10] = 'disabled'
-        }else if(i.reservationTime=='02:00PM - 02:30PM'){
+        }else if(i.reservationTime=='02:00 PM - 02:30 PM'){
             scheduleStatus[11] = 'disabled'
-        }else if(i.reservationTime=='02:30PM - 03:00PM'){
+        }else if(i.reservationTime=='02:30 PM - 03:00 PM'){
             scheduleStatus[12] = 'disabled'
-        }else if(i.reservationTime=='03:00PM - 03:30PM'){
+        }else if(i.reservationTime=='03:00 PM - 03:30 PM'){
             scheduleStatus[13] = 'disabled'
-        }else if(i.reservationTime=='03:30PM - 04:00PM'){
+        }else if(i.reservationTime=='03:30 PM - 04:00 PM'){
             scheduleStatus[14] = 'disabled'
-        }else if(i.reservationTime=='04:00PM - 04:30PM'){
+        }else if(i.reservationTime=='04:00 PM - 04:30 PM'){
             scheduleStatus[15] = 'disabled'
-        }else if(i.reservationTime=='04:30PM - 05:00PM'){
+        }else if(i.reservationTime=='04:30 PM - 05:00 PM'){
             scheduleStatus[16] = 'disabled'
         }
     }

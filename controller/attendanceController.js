@@ -37,7 +37,6 @@ attendanceController.distributionPage = (req, res) => {
 attendanceController.distributionHistoryPage = async(req, res) => {
     try{
         const schedule = await Schedule.find({$and:[{reservationDate : req.body.date},{game : req.body.game}]});
-        console.log(schedule);
         res.json({success : true, history : schedule});
     }catch(err){
         res.json({success : false, message:"Error in finding schedule"});
