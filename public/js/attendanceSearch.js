@@ -19,7 +19,7 @@ updateStatusBtn.addEventListener('click', (e) => {
         <div class="mt-5 text1 p-4 rounded">
           <h3 class="text-center mb-2"><b>Reservation Details</b></h3>
           <h6><b>Schedule Token: ${data.history._id}</b></h6>
-          <h6><b>Student ID:${data.history.studentId}</b></h6>
+          <h6><b>Student ID:${data.history.studentID}</b></h6>
           <h6><b>Date: ${data.history.reservationDate}</b></h6>
           <h6><b>Game: ${data.history.game}</b></h6>
           <h6><b>Board: ${data.history.board}</b></h6>
