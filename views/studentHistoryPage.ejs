@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/studentHistoryPage.css">
     <script src="/js/bootstrap.bundle.min.js" defer></script>
     <script src="/js/logOutBtn.js" defer></script>
+    <script src="/js/studentHistoryPage.js" defer></script>
 </head>
 
 
@@ -21,14 +22,14 @@
             <div class="row">
                 <div class="col-lg-6 col-12 p-2 justify-content-center">
                     <div class="schedule bg-body-tertiary p-3 rounded-2 text-center">
-                        <h1><b>23</b></h1>
+                        <h1><b><%= count.total %></b></h1>
                         <h3><b>TOTAL</b></h3>
                     </div>
                 </div>
 
                 <div class="col-lg-6 col-12 p-2 justify-content-center">
                     <div class="schedule bg-body-tertiary p-3 rounded-2 text-center text-success">
-                        <h1><b>07</b></h1>
+                        <h1><b><%= count.thisMonth %></b></h1>
                         <h3><b>THIS MONTH</b></h3>
                     </div>
                 </div>
@@ -41,16 +42,19 @@
                     <h5 class="text-center">All Reservation History</h5>
                 </div>
             </div>
+            <% time.forEach((i) =>{%>
             <div class="schedule row bg-body-tertiary p-3 rounded-2">
                 <div class="col-lg-8 col-12 ">
-                    <h6><b>Schedule Token: G210032E</b></h6>
-                    <h6><b>Date: 18-08-2023</b></h6>
-                    <h6><b>Game: Table Tennis</b></h6>
-                    <h6><b>Board: 03</b></h6>
-                    <h6><b>Schedule: 12:00 pm - 12:30 pm</b></h6>
-                    <h6><b>Status: Attended</b></h6>
+                    <h6><b>Schedule Token:<%= i._id %> </b></h6>
+                    <h6><b>Date:<%= i.reservationDate %> </b></h6>
+                    <h6><b>Game:<%= i.game %></b></h6>
+                    <h6><b>Board:<%= i.board %></b></h6>
+                    <h6><b>Schedule:<%= i.reservationTime %></b></h6>
+                    <h6><b>Status:<%=  i.reservationStatus%> </b></h6>
+                    count++;
                 </div>
             </div>
+            <% })%>
         </div>
 
 </body>
