@@ -9,7 +9,19 @@ chessSearch.addEventListener('click', (e)=>{
     dateSearch = document.querySelector('.date').value;
     board = document.querySelector('.board').value;
 
-    const data = {
+    const currentDate = new Date();
+    const searchDate = new Date(dateSearch);
+
+    const difference = (searchDate.getTime() - currentDate.getTime())/ (1000 * 3600 * 24);
+
+    if(difference < 0){
+      alert('You cannot reserve a table for a past date');
+      window.location.href = '/studentChess';
+    }else if(difference > 5){
+        alert('You can only reserve a table within 5 days');
+        window.location.href = '/studentChess';
+    }else{
+      const data = {
         'date' : dateSearch,
         'board' : board
     };
@@ -106,6 +118,8 @@ chessSearch.addEventListener('click', (e)=>{
     }).catch(err=>{
         console.log(err.message);
     })
+    };
+    
 });
 
 function reserveChess(){
