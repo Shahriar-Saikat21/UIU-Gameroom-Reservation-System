@@ -41,7 +41,7 @@
                 <div class="col-lg-4 col-12 d-flex flex-column align-items-lg-end">
                   <h6 class="text-secondary"><b><%= new Date().toJSON().slice(0, 10) %> days to go</b></h6>
                   <div class="mt-auto">
-                    <button type="button" class="btn btn-danger cancelBtn" id=<%= i._id %>>Cancel Reservation</button>
+                    <button type="button" class="btn btn-danger cancelBtn" name=<%= i.reservationDate %> id=<%= i._id %>>Cancel Reservation</button>
                   </div>
                 </div>
               </div>
