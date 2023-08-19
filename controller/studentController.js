@@ -31,7 +31,6 @@ studentController.studentHistoryPage = async (req,res)=>{
         "thisMonth" : thisMonth,
         "total" : total
     }
-    console.log(time,count)
     res.render('studentHistoryPage',{time,count});
 };
 
