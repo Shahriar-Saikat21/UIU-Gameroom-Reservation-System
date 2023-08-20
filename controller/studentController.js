@@ -36,8 +36,16 @@ studentController.studentHistoryPage = async (req,res)=>{
 
 
 //Student TT Reservation Page
-studentController.TTReservationPage = (req, res) => {
-    res.render('studentTTReservationPage');
+studentController.TTReservationPage =  async (req, res) => {
+    const user = await Student.findOne({studentID : req.id});
+    const status = user.status;
+    if(status == "active"){
+        res.render('studentTTReservationPage');
+    }else{
+        const time = await Schedule.find({$and:[{studentID : req.id},{reservationStatus :
+            "Not Attended"}]}).sort({reservationDate:1});
+        res.render('studentHomePage',{user,time});
+    }
 }
 
 //Student TT search Page
@@ -124,8 +132,16 @@ studentController.TTBook = async (req, res) => {
 }
 
 //Student Chess Reservation Page
-studentController.ChessReservationPage = (req, res) => {
-    res.render('studentChessReservationPage');
+studentController.ChessReservationPage = async(req, res) => {
+    const user = await Student.findOne({studentID : req.id});
+    const status = user.status;
+    if(status == "active"){
+        res.render('studentChessReservationPage');
+    }else{
+        const time = await Schedule.find({$and:[{studentID : req.id},{reservationStatus :
+            "Not Attended"}]}).sort({reservationDate:1});
+        res.render('studentHomePage',{user,time});
+    }
 }
 
 //Student chess search Page
@@ -194,8 +210,6 @@ studentController.chessSearchPage = async (req, res) => {
 
 //Student chess book
 studentController.chessBook = async (req, res) => {
-    //const reservationStatus = "Not Attended";
-
     const newSchedule = new Schedule({
         studentID: req.id,
         game : "Chess",
@@ -214,8 +228,16 @@ studentController.chessBook = async (req, res) => {
 }
 
 //Student Carrom Reservation Page
-studentController.CarromReservationPage = (req, res) => {
-    res.render('studentCarromReservationPage');
+studentController.CarromReservationPage = async(req, res) => {
+    const user = await Student.findOne({studentID : req.id});
+    const status = user.status;
+    if(status == "active"){
+        res.render('studentCarromReservationPage');
+    }else{
+        const time = await Schedule.find({$and:[{studentID : req.id},{reservationStatus :
+            "Not Attended"}]}).sort({reservationDate:1});
+        res.render('studentHomePage',{user,time});
+    }
 }
 
 //Student Carrom search Page
