@@ -58,9 +58,51 @@
               <h5><b>Email: <%= user.email%></b></h5>
               <h5><b>ID: <%= user.studentID%></b></h5>
               <h5><b>Status: <%= user.status%></b></h5>
-              <h6><a href="#">Upload Profile Picture</a></h6>
-              <h6><a href="#">Change Password</a></h6>
+              <h6><a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Upload Profile Picture</a></h6>
+              <h6><a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Change Password</a></h6>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Upload Profile Picture</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Choose Your Profile Picture</label>
+              <input class="form-control" type="file" id="formFile">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-warning">Upload</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Change Password</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Enter Your New Password</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-warning">Save</button>
           </div>
         </div>
       </div>
