@@ -15,6 +15,7 @@ attendanceController.searchPage = async(req, res) => {
         res.json({success : true, history : schedule});
     }catch(err){
         console.log(err);
+        res.json({success : false, message:"Not Found"});
     }
 }
 

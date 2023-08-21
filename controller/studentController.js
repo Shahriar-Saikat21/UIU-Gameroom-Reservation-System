@@ -1,5 +1,6 @@
 const Student = require('../models/studentModel');
 const Schedule = require('../models/scheduleModel');
+const bcrypt = require('bcrypt');
 
 const studentController = {};
 
@@ -330,6 +331,17 @@ studentController.cancelReservation = async (req, res) => {
     try {
         await Schedule.deleteOne({_id:req.query.id});
         res.status(500).json({message: "Reservation has been cancelled Successfully",success:true});
+    } catch (err) {
+        res.status(200).json({message: err.message,success:false});
+    }
+}
+
+//student change password
+studentController.changeStudentPassword = async (req, res) => {
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.passwordValue, 10);
+        await Student.updateOne({studentID:req.id},{$set:{password:hashedPassword}});
+        res.status(500).json({message: "Password has been updated successfully",success:true});
     } catch (err) {
         res.status(200).json({message: err.message,success:false});
     }
