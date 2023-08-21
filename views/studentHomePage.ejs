@@ -41,7 +41,13 @@
                   <h6><b>Schedule: <%= i.reservationTime %></b></h6>
                 </div>
                 <div class="col-lg-4 col-12 d-flex flex-column align-items-lg-end">
-                  <h6 class="text-secondary"><b><%= new Date().toJSON().slice(0, 10) %> days to go</b></h6>
+                  <script>
+                    var dt1 = new Date();
+                    var dt2 = new Date("<%= i.reservationDate %>");
+                    var diff = dt2.getTime() - dt1.getTime();
+                    var days = Math.ceil(diff / (1000 * 3600 * 24));
+                    document.write("<h6 class='text-secondary'><b>" + days + " days to go</b></h6>");
+                  </script>
                   <div class="mt-auto">
                     <button type="button" class="btn btn-danger cancelBtn" name=<%= i.reservationDate %> id=<%= i._id %>>Cancel Reservation</button>
                   </div>
