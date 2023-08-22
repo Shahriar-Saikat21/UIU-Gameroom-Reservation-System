@@ -11,6 +11,8 @@
   <script src="/js/bootstrap.bundle.min.js" defer></script>
   <script src="/js/logOutBtn.js" defer></script>
   <script src="/js/cancelReservation.js" defer></script>
+  <script src="/js/changePassword.js" defer></script>
+  <script src="/js/uploadPP.js" defer></script>
 </head>
 
 <body>
@@ -39,7 +41,13 @@
                   <h6><b>Schedule: <%= i.reservationTime %></b></h6>
                 </div>
                 <div class="col-lg-4 col-12 d-flex flex-column align-items-lg-end">
-                  <h6 class="text-secondary"><b><%= new Date().toJSON().slice(0, 10) %> days to go</b></h6>
+                  <script>
+                    var dt1 = new Date();
+                    var dt2 = new Date("<%= i.reservationDate %>");
+                    var diff = dt2.getTime() - dt1.getTime();
+                    var days = Math.ceil(diff / (1000 * 3600 * 24));
+                    document.write("<h6 class='text-secondary'><b>" + days + " days to go</b></h6>");
+                  </script>
                   <div class="mt-auto">
                     <button type="button" class="btn btn-danger cancelBtn" name=<%= i.reservationDate %> id=<%= i._id %>>Cancel Reservation</button>
                   </div>
@@ -76,12 +84,12 @@
           <div class="modal-body">
             <div class="mb-3">
               <label for="formFile" class="form-label">Choose Your Profile Picture</label>
-              <input class="form-control" type="file" id="formFile">
+              <input class="form-control changePP" type="file" id="formFile">
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-warning">Upload</button>
+            <button type="button" class="btn btn-warning ppUpload">Upload</button>
           </div>
         </div>
       </div>
@@ -97,12 +105,12 @@
           <div class="modal-body">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Enter Your New Password</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" class="form-control changePW" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-warning">Save</button>
+            <button type="button" class="btn btn-warning passChange">Save</button>
           </div>
         </div>
       </div>

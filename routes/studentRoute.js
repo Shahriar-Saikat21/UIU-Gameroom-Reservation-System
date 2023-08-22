@@ -41,5 +41,8 @@ studentRoute.post('/carromBook', authentication,studentController.carromBook);
 //student cancel reservation
 studentRoute.get('/cancelReservation', authentication,studentController.cancelReservation);
 
+//student password update
+studentRoute.put('/changeStudentPassword', authentication,studentController.changeStudentPassword);
+
 
 module.exports = studentRoute;
