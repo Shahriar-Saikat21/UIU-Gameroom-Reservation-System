@@ -1,6 +1,7 @@
 const express = require('express');
 const studentController = require('../controller/studentController');
 const authentication = require('../middleware/authentication');
+const upload = require('../middleware/multerUpload.js');
 
 const studentRoute = express.Router();
 
@@ -43,6 +44,12 @@ studentRoute.get('/cancelReservation', authentication,studentController.cancelRe
 
 //student password update
 studentRoute.put('/changeStudentPassword', authentication,studentController.changeStudentPassword);
+
+//student profile pic update
+studentRoute.post('/updatePP', authentication,upload.single('image'),studentController.changeStudentPP);
+
+//student profile pic show
+studentRoute.get('/showPP', authentication,studentController.showStudentPP);
 
 
 module.exports = studentRoute;

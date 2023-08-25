@@ -19,7 +19,7 @@ const studentSchema = mongoose.Schema({
     },
     image : {
         data: Buffer,
-        contentType : String
+        contentType : String,
     },
     password : {
         type : String,

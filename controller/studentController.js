@@ -347,4 +347,28 @@ studentController.changeStudentPassword = async (req, res) => {
     }
 }
 
+//student change profile pic
+studentController.changeStudentPP = async (req, res) => {
+    console.log(req.id,req.file.mimetype)
+    try {
+        await Student.updateOne({studentID:req.id},{$set:{image:{
+            data : req.file.buffer,
+            contentType : req.file.mimetype
+        }}});
+        res.redirect('/studentHome');
+    } catch (err) {
+        res.json({message: err.message,success:false})
+    }
+}
+
+//student show profile pic
+studentController.showStudentPP = async (req, res) => {
+    try {
+        const user = await Student.findOne({studentID:req.id});
+        res.json({memory:user,success:true});
+    } catch (err) {
+        res.json({message: err.message,success:false})
+    }
+}
+
 module.exports = studentController;

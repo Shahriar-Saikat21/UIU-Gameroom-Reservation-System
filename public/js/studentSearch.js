@@ -26,7 +26,7 @@ studentSearch.addEventListener('click', (e) => {
             const markup = `
             <div class="row">
               <div class="card text-lg-end rounded-circle">
-                <img src="/images/BG.png" class="rounded-circle" width="288" height="288">
+                <img src="/images/BG.png" class="image" width="288" height="288">
               </div>
             </div>
             <div class="row">
@@ -42,7 +42,23 @@ studentSearch.addEventListener('click', (e) => {
                     </div>
                 </div>
             </div>`;
-                section1.insertAdjacentHTML('beforeend',markup);
+            section1.insertAdjacentHTML('beforeend',markup);
+
+            const image = document.querySelector('.image');
+
+            image.src = `data:${data.info.image.contentType};base64,${arrayBufferToBase64(data.info.image.data.data)}`;   
+ 
+
+            function arrayBufferToBase64(buffer) {
+                let binary = '';
+                const bytes = new Uint8Array(buffer);
+                const len = bytes.byteLength;
+                for (let i = 0; i < len; i++) {
+                binary += String.fromCharCode(bytes[i]);
+                }
+                return window.btoa(binary);
+            }
+
         }else{
             alert(data.message);
             window.location.href = '/adminHome';
