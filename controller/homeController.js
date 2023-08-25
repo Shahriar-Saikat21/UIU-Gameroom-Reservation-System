@@ -26,9 +26,53 @@ homeController.forgetPassword = (req, res) => {
     res.render('forgetPasswordpage');
 };
 
+//forget password link
+homeController.forgetPasswordLink = async (req, res) => {
+    const user = await student.findOne({ studentID: req.body.id });
+
+    if(user){
+        const transporter = nodemailer.createTransport({
+            host: 'smtp.ethereal.email',
+            port: 587,
+            auth: {
+                user: 'sabryna13@ethereal.email',
+                pass: 'daCAfdD5SEpNUeSvGu'
+            }
+        });
+
+        const mailData = {
+            from: 'ephraim.west26@ethereal.email',
+            to: `${user.email}`,         
+            subject: 'UIU Reservation System - Reset Password Link',
+            text: 'http://localhost:3000/resetPassword'
+        };
+    
+        transporter.sendMail(mailData, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            res.status(500).json({message:'Check your uiu provided email for the reset link',success:true});
+        });       
+    }else{
+        res.status(200).json({message: "Profile not found",success:false});
+    }
+        
+};
+
 //Reset Password Page
 homeController.resetPasswordPage = (req, res) => {
     res.render('resetPassword');
+};
+
+//resetPassword Link
+homeController.resetPasswordLink = async (req, res) => {
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.newPassword, 10);
+        await student.updateOne({studentID:req.body.id},{$set:{password:hashedPassword}});
+        res.status(500).json({message: "Password has been updated successfully",success:true});
+    } catch (err) {
+        res.status(200).json({message: err.message,success:false});
+    }
 };
 
 //signin request

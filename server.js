@@ -11,6 +11,7 @@ const homeRoute = require('./routes/homeRoute');
 const attendanceRoute = require('./routes/attendanceRoute');
 const studentRoute = require('./routes/studentRoute');
 const adminRoute = require('./routes/adminRoute');
+const {jobOne} = require('./middleware/scheduleJob');
 
 
 //initialization
@@ -25,6 +26,9 @@ app.use(express.static(path.join(__dirname,'public')));
 //external middleware
 app.use(express.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
+
+//schedule jobs
+//app.use(jobOne);
 
 //all routes
 app.use(homeRoute);

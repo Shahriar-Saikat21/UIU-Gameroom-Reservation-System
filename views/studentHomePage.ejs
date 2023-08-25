@@ -12,7 +12,7 @@
   <script src="/js/logOutBtn.js" defer></script>
   <script src="/js/cancelReservation.js" defer></script>
   <script src="/js/changePassword.js" defer></script>
-  <script src="/js/uploadPP.js" defer></script>
+  <script src="/js/showPP.js" defer></script>
 </head>
 
 <body>
@@ -58,7 +58,7 @@
           <div class="col-lg-5 col-12 p-5">
             <div class="row">
               <div class="card text-lg-end rounded-circle">
-                <img src="/images/BG.png" class="rounded-circle" width="288" height="288">
+                <img src="" alt="." class="image" width="307" height="288">
               </div>
             </div>
             <div class="row">
@@ -83,13 +83,16 @@
           </div>
           <div class="modal-body">
             <div class="mb-3">
-              <label for="formFile" class="form-label">Choose Your Profile Picture</label>
-              <input class="form-control changePP" type="file" id="formFile">
+              <div class="mb-3">
+                <form action="/updatePP" enctype="multipart/form-data" method="post">
+                  <div class="mb-3">
+                      <label for="formFile" class="form-label">Upload a image</label>
+                      <input class="form-control" name="image" type="file" id="formFile" required>
+                  </div>
+                  <button type="submit" class="btn btn-warning">Upload</button>
+                </form>
+              </div>    
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-warning ppUpload">Upload</button>
           </div>
         </div>
       </div>
