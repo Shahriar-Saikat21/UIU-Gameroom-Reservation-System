@@ -2,7 +2,6 @@ const logoutbtn = document.querySelector('.logout-btn');
 
 logoutbtn.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log("logout");
     sessionStorage.clear();
     fetch('/logout',)
     .then(res => res.json())
