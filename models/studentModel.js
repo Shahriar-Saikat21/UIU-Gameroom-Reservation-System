@@ -32,6 +32,14 @@ const studentSchema = mongoose.Schema({
     status : {
         type : String,
         required : true,
+    },
+    limit : {
+        type : Number,
+        default : 0,
+    },
+    banDays : {
+        type : Number,
+        default : 0,
     }
 });
 
