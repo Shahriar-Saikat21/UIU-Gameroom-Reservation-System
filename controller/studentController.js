@@ -115,19 +115,27 @@ studentController.TTSearchPage = async (req, res) => {
 
 //Student TT book
 studentController.TTBook = async (req, res) => {
-    const newSchedule = new Schedule({
-        studentID: req.id,
-        game : "Table Tennis",
-        reservationDate : req.body.dateSearch,
-        reservationTime : req.body.reservedTime,
-        board : req.body.board,
-    });
+    const student = await Student.findOne({studentID:req.id});
+    const limit = student.limit;
 
-    try {
-        await newSchedule.save();
-        res.status(500).json({message: "Schedule has been reserved !!!", success:true});
-    } catch (err) {
-        res.status(200).json({message: err.message,success:false});
+    if(limit >=2){
+        res.status(500).json({message: "Your weekly limit is over", success:true});
+    }else{
+        const newSchedule = new Schedule({
+            studentID: req.id,
+            game : "Table Tennis",
+            reservationDate : req.body.dateSearch,
+            reservationTime : req.body.reservedTime,
+            board : req.body.board,
+        });
+
+        try {
+            await newSchedule.save();
+            await Student.updateOne({studentID:req.id},{$set : {limit : limit+1}});
+            res.status(500).json({message: "Schedule has been reserved !!!", success:true});
+        } catch (err) {
+            res.status(200).json({message: err.message,success:false});
+        }
     }
 
 }
@@ -211,19 +219,27 @@ studentController.chessSearchPage = async (req, res) => {
 
 //Student chess book
 studentController.chessBook = async (req, res) => {
-    const newSchedule = new Schedule({
-        studentID: req.id,
-        game : "Chess",
-        reservationDate : req.body.dateSearch,
-        reservationTime : req.body.reservedTime,
-        board : req.body.board,
-    });
+    const student = await Student.findOne({studentID:req.id});
+    const limit = student.limit;
 
-    try {
-        await newSchedule.save();
-        res.status(500).json({message: "Schedule has been reserved !!!", success:true});
-    } catch (err) {
-        res.status(200).json({message: err.message,success:false});
+    if(limit >=2){
+        res.status(500).json({message: "Your weekly limit is over", success:true});
+    }else{
+        const newSchedule = new Schedule({
+            studentID: req.id,
+            game : "Chess",
+            reservationDate : req.body.dateSearch,
+            reservationTime : req.body.reservedTime,
+            board : req.body.board,
+        });
+
+        try {
+            await newSchedule.save();
+            await Student.updateOne({studentID:req.id},{$set : {limit : limit+1}});
+            res.status(500).json({message: "Schedule has been reserved !!!", success:true});
+        } catch (err) {
+            res.status(200).json({message: err.message,success:false});
+        }
     }
 
 }
@@ -307,21 +323,27 @@ studentController.carromSearchPage = async (req, res) => {
 
 //Student Carrom book
 studentController.carromBook = async (req, res) => {
-    //const reservationStatus = "Not Attended";
+    const student = await Student.findOne({studentID:req.id});
+    const limit = student.limit;
 
-    const newSchedule = new Schedule({
-        studentID: req.id,
-        game : "Carrom",
-        reservationDate : req.body.dateSearch,
-        reservationTime : req.body.reservedTime,
-        board : req.body.board,
-    });
-
-    try {
-        await newSchedule.save();
-        res.status(500).json({message: "Schedule has been reserved !!!", success:true});
-    } catch (err) {
-        res.status(200).json({message: err.message,success:false});
+    if(limit ===2 || limit >2){
+        res.status(500).json({message: "Your weekly limit is over", success:true});
+    }else{
+        const newSchedule = new Schedule({
+            studentID: req.id,
+            game : "Carrom",
+            reservationDate : req.body.dateSearch,
+            reservationTime : req.body.reservedTime,
+            board : req.body.board,
+        });
+    
+        try {
+            await newSchedule.save();
+            await Student.updateOne({studentID:req.id},{$set : {limit : limit+1}});
+            res.status(500).json({message: "Schedule has been reserved !!!", success:true});
+        } catch (err) {
+            res.status(200).json({message: err.message,success:false});
+        }
     }
 
 }
@@ -349,7 +371,6 @@ studentController.changeStudentPassword = async (req, res) => {
 
 //student change profile pic
 studentController.changeStudentPP = async (req, res) => {
-    console.log(req.id,req.file.mimetype)
     try {
         await Student.updateOne({studentID:req.id},{$set:{image:{
             data : req.file.buffer,

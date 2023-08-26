@@ -25,8 +25,8 @@ studentSearch.addEventListener('click', (e) => {
             sessionStorage.setItem('studentID',data.info.studentID);
             const markup = `
             <div class="row">
-              <div class="card text-lg-end rounded-circle">
-                <img src="/images/BG.png" class="image" width="288" height="288">
+              <div class="">
+                <img src="" class="image img-thumbnail" style="width:307px; height:288px;">
               </div>
             </div>
             <div class="row">
