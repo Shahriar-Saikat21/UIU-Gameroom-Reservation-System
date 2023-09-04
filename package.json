@@ -1,8 +1,11 @@
 {
-  "name": "UIU-Gameroom-Reservation-System",
+  "name": "uiu-gameroom-reservation-system",
   "version": "1.0.0",
   "main": "server.js",
-  "repository": "https://github.com/Shahriar-Saikat21/UIU-Gameroom-Reservation-System.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shahriar-Saikat21/UIU-Gameroom-Reservation-System.git"
+  },
   "author": "saikat <saikatbass@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -24,5 +27,11 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
-  }
+  },
+  "description": "UIU Game Room Schedule Reservation System by Express JS",
+  "bugs": {
+    "url": "https://github.com/Shahriar-Saikat21/UIU-Gameroom-Reservation-System/issues"
+  },
+  "homepage": "https://github.com/Shahriar-Saikat21/UIU-Gameroom-Reservation-System#readme",
+  "keywords": []
 }
